@@ -1,6 +1,6 @@
 import './styles.scss';
 
-const Count = ({count, increase, id}) => {
+const Count = ({count, increase, decrease, id}) => {
     return (  
         <div className="count">
             <div className="count__box">
@@ -10,7 +10,7 @@ const Count = ({count, increase, id}) => {
               <button className="count__up" type="button" onClick={() => {increase(id)}}>
                 <img src="./img/icons/icon-up.svg" alt="increase pic" />
               </button>
-              <button className="count__down" type="button" >
+              <button className="count__down" type="button" onClick={() => {decrease(id)}}>
                 <img src="./img/icons/icon-down.svg" alt="decrease pic" />
               </button>
             </div>

@@ -2,22 +2,27 @@ import './style.scss';
 import Count from '../Count/Count';
 import ButtonDelete from '../ButtonDelete/ButtonDelete';
 
-const Product = () => {
+// деструктур props сразу ({product})
+
+const Product = ({product}) => {
+  // деструкт на отдельн переменн
+  const {img, title, price, count, id} = product
+
     return (
         <section className="product">
         <div className="product__img">
-          <img src="./img/products/macbook.jpg" alt="Apple MacBook Air 13 pic" />
+          <img src={`./img/products/${img}`} alt={title}/>
         </div>
         <div className="product__title">
-          Apple MacBook Air 13
+          {title}
         </div>
         <div className="product__count">
 
-          <Count />
+          {/* <Count /> */}
 
         </div>
         <div className="product__price"> 
-          110 000 руб.
+          {price} руб.
         </div>
         <div className="product__controls">
           <ButtonDelete />

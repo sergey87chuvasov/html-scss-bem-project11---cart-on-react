@@ -4,9 +4,9 @@ import ButtonDelete from '../ButtonDelete/ButtonDelete';
 
 // деструктур props сразу ({product})
 
-const Product = ({product}) => {
+const Product = ({product, deleteProduct, increase}) => {
   // деструкт на отдельн переменн
-  const {img, title, price, count, id} = product
+  const {img, title, priceTotal, count, id} = product
 
     return (
         <section className="product">
@@ -18,14 +18,14 @@ const Product = ({product}) => {
         </div>
         <div className="product__count">
 
-          {/* <Count /> */}
+          <Count count={count} increase={increase} id={id}/>
 
         </div>
         <div className="product__price"> 
-          {price} руб.
+          {priceTotal} руб.
         </div>
         <div className="product__controls">
-          <ButtonDelete />
+          <ButtonDelete deleteProduct={deleteProduct} id={id} />
         </div>
         
       </section>
